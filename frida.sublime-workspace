@@ -1,0 +1,1001 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"regrex"
+			],
+			[
+				"lis",
+				"list_threads"
+			],
+			[
+				"devi",
+				"device_info"
+			],
+			[
+				"adn",
+				"android_id"
+			],
+			[
+				"String",
+				"StringBuffer"
+			],
+			[
+				"E",
+				"ENUM_ALL"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"ENUM",
+				"ENUM_MOTHODS"
+			],
+			[
+				"s",
+				"session"
+			],
+			[
+				"on",
+				"on_message"
+			],
+			[
+				"en",
+				"enum_module"
+			],
+			[
+				"typ",
+				"type_of_hook"
+			],
+			[
+				"or",
+				"orange"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "frida_hook.py",
+			"settings":
+			{
+				"buffer_size": 5722,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "hook.py",
+			"settings":
+			{
+				"buffer_size": 966,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "s4.js",
+			"settings":
+			{
+				"buffer_size": 375,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "burp_visible_prosy/echo-server.py",
+			"settings":
+			{
+				"buffer_size": 752,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "temp/exam.py",
+			"settings":
+			{
+				"buffer_size": 689,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "import frida, sys"
+			}
+		},
+		{
+			"file": "functions/enum_classes.js",
+			"settings":
+			{
+				"buffer_size": 517,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions/custom_hook.js",
+			"settings":
+			{
+				"buffer_size": 743,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "Java.perform("
+			}
+		},
+		{
+			"file": "functions/custom_script.js",
+			"settings":
+			{
+				"buffer_size": 3563,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions/enum_methods.js",
+			"settings":
+			{
+				"buffer_size": 210,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "burp_visible_prosy/burp-tracer.py",
+			"settings":
+			{
+				"buffer_size": 933,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "from frida import tracer"
+			}
+		},
+		{
+			"contents": "{\n    onEnter: function (log, args, state) {\n        console.log(\"Inside target function.\")\n    },\n \n    onLeave: function (log, retval, state) {\n        send({from: '/http', payload: '{ \"name\":\"John\", \"age\":30, \"car\":null }'});\n        var op = recv('input', function(value) { // callback function\n            console.log(\"Forwarding mitm'ed content: \" + value.payload);\n            console.log(\"Data after modified: \" + state.buf, value.payload);\n        });\n        op.wait();\n    }\n}",
+			"file": "burp_visible_prosy/js.js",
+			"file_size": 495,
+			"file_write_time": 132125066927789878,
+			"settings":
+			{
+				"buffer_size": 487,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "{"
+			}
+		},
+		{
+			"file": "functions/enum_all.js",
+			"settings":
+			{
+				"buffer_size": 3457,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions/bypass_sslpinning.js",
+			"settings":
+			{
+				"buffer_size": 341,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "functions/hooking_string.js",
+			"settings":
+			{
+				"buffer_size": 907,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Java.perform(function () {\n    // Function to hook is defined here\n    const StringBuilder = Java.use('java.lang.StringBuilder');\n    const StringBuffer = Java.use('java.lang.StringBuffer');\n\n    StringBuilder.toString.implementation = function () {\n            var result = this.toString();\n\t\t\tvar text = \t'{ \"filename\":\"StringBuilder.txt\" , \"data\":\"'\n\t\t\t\t\t\t+ result + '\", \"isencode\":\"False\" }';\n\t\t \tvar obj = JSON.parse(text);\n\t\t\tsend(obj);\n\n            console.log('StringBuilder \\t=> ' + result);\n            return result;\n    };\n\n    StringBuffer.toString.implementation = function () {\n            var result = this.toString();\n\t\t\tvar text = \t'{ \"filename\":\"StringBuffer.txt\" , \"data\":\"'\n\t\t\t\t\t\t+ result + '\", \"isencode\":\"False\" }';\n\t\t \tvar obj = JSON.parse(text);\n\t\t\tsend(obj);\n\n            console.log('StringBuffer \\t=> ' + result);\n            return result;\n    };\n});",
+			"settings":
+			{
+				"buffer_size": 879,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "outputs/Classes.txt",
+			"settings":
+			{
+				"buffer_size": 38309,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "outputs/Modules.txt",
+			"settings":
+			{
+				"buffer_size": 5956,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/functions",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/outputs"
+	],
+	"file_history":
+	[
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/s4.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/burp_visible_prosy/echo-server.py",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/outputs/NativeCFuntions.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/outputs/StringBuffer.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/outputs/Classes.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/functions/enum_then_hook.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/functions/custom_script.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/functions/enum_nativecfunctions.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/outputs/Modules.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/get_androidid.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/custom_script.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/StringBuilder.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/Classes.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/hooking_string.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/enum_classes.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/enum_module.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/enum_nativecfunctions.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/NativeCFunctions.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/Modules.txt",
+		"/C/Users/cloud/Downloads/WorkSpace/Mobile/VTB_LifeStyles/New Text Document.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/NativeCFuntions.txt",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/new_class.raw",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/enum_all.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/frida_enum.py",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/enum_methods.js",
+		"/C/Users/cloud/Downloads/WorkSpace/Mobile/VTB_LifeStyles/app.js",
+		"/C/Users/cloud/OneDrive - actvn.edu.vn/Frida/class_handler.py",
+		"/C/Users/cloud/Downloads/WorkSpace/Mobile/VTB_LifeStyles/class.txt",
+		"/C/Users/cloud/Downloads/WorkSpace/Mobile/VTB_LifeStyles/ReadMe.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"    \t\t\t\n",
+			"com.vietinbank.ipay.",
+			"com.vietinbank.ipay.o",
+			"regrex",
+			"infosecadventures.fridademo.",
+			"infosecadventures.fridademo",
+			"fragments",
+			"YW5kcm9pZHgudHJhbnNpdGlvbi5DaGFuZ2VCb3VuZHMkNA",
+			"isRoot",
+			"infosecadventures.fridademo.utils",
+			"infosecadventures.fridademo.",
+			"infosecadventures.fridademo.I",
+			"infosecadventures.fridademo.",
+			"send",
+			"\")\n",
+			"raw_input",
+			"jc",
+			"gD",
+			"gDBus",
+			"gDbus",
+			"GET_ANDROIDID"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"console.log",
+			"input"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "frida_hook.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3440,
+								3440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2166.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "hook.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								524,
+								524
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "s4.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "burp_visible_prosy/echo-server.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "temp/exam.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								429,
+								429
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import frida, sys",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "functions/enum_classes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 517,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "functions/custom_hook.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40,
+								40
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Java.perform(",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "functions/custom_script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2865,
+								2790
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "functions/enum_methods.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "burp_visible_prosy/burp-tracer.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								122
+							]
+						],
+						"settings":
+						{
+							"auto_name": "from frida import tracer",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "burp_visible_prosy/js.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								479,
+								146
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "functions/enum_all.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								3457
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "functions/bypass_sslpinning.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 341,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "functions/hooking_string.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 879,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								367,
+								368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 15,
+					"file": "outputs/Classes.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 38309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								32450,
+								32450
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 10305.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "outputs/Modules.txt",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 5956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.959022437665,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 303.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "frida.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
